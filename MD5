@@ -1,4 +1,4 @@
-96a26f123d8a248b9d9c38659a9e5994 *DESCRIPTION
+1e6ef98b39fad36a75dfd90a48bd9f3a *DESCRIPTION
 ddf10d508f4759ca61da8d63993ed05f *NAMESPACE
 6e8412103a98385470a8283aefb1d174 *R/RaceID.R
 ce0e4113fb130d5a0607a17e130b58f5 *R/RaceID_utils.R
@@ -14,7 +14,7 @@ d8b48837791a8000f399e80e3bd87605 *data/intestinalData.RData
 a2fc38a29316dc8790fe2f9630392964 *data/intestinalDataSmall.RData
 5eafd85d971e2661b156f3191e8edbf0 *inst/doc/RaceID.R
 2db1c7344f99c9b67068db35c216b538 *inst/doc/RaceID.Rmd
-5294008f36604d5dd01f606015ff986b *inst/doc/RaceID.html
+b3cec58c61a8315cbf60f78ac84cab03 *inst/doc/RaceID.html
 cd4a2ea4f964c9bdf4be18a2decedb01 *man/CCcorrect.Rd
 f89c2215edd6b7567a5cc90e81fac8dd *man/Ltree.Rd
 65e2dc786c63f7275653f3e5f015fd7b *man/RaceID-package.Rd
@@ -88,6 +88,6 @@ fead167692c90c374a83a714c5036d9b *man/rfcorrect.Rd
 e00d1b8d4157e3a25a671dc444bff608 *man/varRegression.Rd
 e3d3cb360fbfdb3c6974e14eb5f09870 *src/Makevars
 8cff0e90d86e72ae930513e9f68019a2 *src/RcppExports.cpp
-083eeadad98b8d3e55d83c91c229570c *src/VarID.cpp
+7424771ac19707ae5c1a10932928d6a0 *src/VarID.cpp
 0da63b615f705aa9dfa2e91b15a0ec3a *src/rcpp_hello_world.cpp
 2db1c7344f99c9b67068db35c216b538 *vignettes/RaceID.Rmd
