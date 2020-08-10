@@ -1,11 +1,11 @@
-396851bb2c3740bffacfa62753be5272 *DESCRIPTION
+8d4dd2badf3a87ec1cc30e29156679bd *DESCRIPTION
 ddf10d508f4759ca61da8d63993ed05f *NAMESPACE
 6a1a3ff0feb67e4bbedb1405cfc23b73 *R/RaceID.R
 cb1148158365b8cd20c0697175a7a2bf *R/RaceID_utils.R
 700ecbf4641f7ea74819e4b6e1894a0d *R/RcppExports.R
 00f6daaf0fba7e0827242fb7b178fd46 *R/StemID.R
 aca47f639f51fff2421ba2aa4830fb17 *R/StemID_utils.R
-eb96d2866cda6f2115b4085d7ed68a24 *R/VarID_functions.R
+e8e71b3b3c43bfe5383f639409b25c36 *R/VarID_functions.R
 87cf3e6b2e19b4030761095043b33761 *R/intestinalData.R
 4924768d2e7027e6fb6c4713d8481da5 *R/intestinalDataSmall.R
 12fd87d683b832e607657f81bd0786b5 *build/vignette.rds
@@ -14,7 +14,7 @@ e909e47b276905f0195e13a3b5520eb0 *data/intestinalData.RData
 33bf556dc8a16e629d399cdf88e6cb06 *data/intestinalDataSmall.RData
 30cfaa308d8980e9ef85f8c7fc409f33 *inst/doc/RaceID.R
 c90607f5d977b11363f9dfcbd364dc97 *inst/doc/RaceID.Rmd
-a174db36328a2587fcf3f3eba2ad683d *inst/doc/RaceID.html
+d698af8abe95d9431204c1330f778729 *inst/doc/RaceID.html
 6036b6e04c8e78efa59da1c0b5079487 *man/CCcorrect.Rd
 7b4b472c291b65801a74b0b48fe7a646 *man/Ltree.Rd
 65e2dc786c63f7275653f3e5f015fd7b *man/RaceID-package.Rd
