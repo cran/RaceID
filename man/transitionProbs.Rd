@@ -9,7 +9,7 @@ transitionProbs(res, cl, pvalue = 0.01)
 \arguments{
 \item{res}{List object with k nearest neighbour information returned by \code{pruneKnn} function.}
 
-\item{cl}{List object with Louvain clustering information, returned by the \code{graphCluster} function.}
+\item{cl}{List object with clustering information, returned by the \code{graphCluster} function. If an aggregated cluster of tiny clusters (singletons) exists, stored in \code{residual.cluster}, this cluster is disregarded, and no links with this clusters are inferred.}
 
 \item{pvalue}{Positive real number between 0 and 1. All nearest neighbours with link probability \code{< pvalue} are discarded. Default is 0.01.}
 }
@@ -20,7 +20,7 @@ Matrix of transition probabilities between clusters.
 This function computes transition probabilities between clusters based on the link probabilities of the pruned k nearest neighbour graph.
 }
 \examples{
-res <- pruneKnn(intestinalDataSmall,metric="pearson",knn=10,alpha=1,no_cores=1,FSelect=FALSE)
+res <- pruneKnn(intestinalDataSmall,knn=10,alpha=1,no_cores=1,FSelect=FALSE)
 cl <- graphCluster(res,pvalue=0.01)
 probs <-transitionProbs(res,cl,pvalue=0.01) 
 }

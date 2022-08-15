@@ -9,7 +9,7 @@ maxNoisyGenes(noise, cl = NULL, set = NULL)
 \arguments{
 \item{noise}{List object with the background noise model and a variability matrix, returned by the \code{compNoise} function.}
 
-\item{cl}{List object with Louvain clustering information, returned by the \code{graphCluster} function. Default is \code{NULL}.}
+\item{cl}{List object with clustering information, returned by the \code{graphCluster} function. Default is \code{NULL}.}
 
 \item{set}{Postive integer number or vector of integers corresponding to valid cluster numbers. Noise levels are computed across all cells in this subset of clusters. Default is \code{NULL} and noise levels are computed across all cells.}
 }
@@ -21,7 +21,7 @@ Vector with average gene expression variability in decreasing order, computed ac
 This function extracts genes with maximal variability in a cluster or in the entire data set.
 }
 \examples{
-res <- pruneKnn(intestinalDataSmall,metric="pearson",knn=10,alpha=1,no_cores=1,FSelect=FALSE)
+res <- pruneKnn(intestinalDataSmall,knn=10,alpha=1,no_cores=1,FSelect=FALSE)
 noise <- compNoise(intestinalDataSmall,res,pvalue=0.01,genes = NULL,no_cores=1)
 mgenes <- maxNoisyGenes(noise)
 }
