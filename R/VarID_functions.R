@@ -2303,7 +2303,7 @@ violinMarkerPlot <- function(g, object, noise = NULL, set = NULL, ti = NULL ){
 }
 
 #' @title Extract pseudo-time order of cells along a trajectory
-#' @description Extract pseudo-time order of cells along a trajectory defined by a set of clusters using the \pkg{slingshot} algorithm.
+#' @description Extract pseudo-time order of cells along a trajectory defined by a set of clusters using the \pkg{slingshot} algorithm. If the \pkg{slingshot} package is unavailable, the function falls back to inference by principal curve analysis using the \pkg{princurve} package.
 #' @param object \pkg{RaceID} \code{SCseq} object.
 #' @param set Set of valid ordered cluster numbers (in \code{object@cpart}) defining the trajectory for which the pseudo-temporal order of cells should be computed computed. Only clusters on a single, linear trajectory should be given.
 #' @param m Existing dimensional reduction representation of RaceID object. Either \code{"fr"}, \code{"tsne"} or \code{"umap"}. Default is NULL and dimensional reduction representation is computed for all cells in \code{set}.
@@ -2331,6 +2331,7 @@ violinMarkerPlot <- function(g, object, noise = NULL, set = NULL, ti = NULL ){
 #' @import RColorBrewer
 #' @import umap
 #' @import Rtsne
+#' @import princurve
 pseudoTime <- function(object,set,m=NULL,map="umap",x=NULL,n_neighbors = 15, metric = "euclidean", n_epochs = 200, min_dist = 0.1, local_connectivity = 1, spread = 1, initial_cmd=TRUE,perplexity=30,rseed=15555,...){
 
     umap.pars <- umap.defaults
@@ -2400,31 +2401,39 @@ pseudoTime <- function(object,set,m=NULL,map="umap",x=NULL,n_neighbors = 15, met
         }
     }
 
-    sls <-  slingshot::getLineages(rd, part, start.clus = set[1])
-    cset <- as.character(set)
-    sls@metadata$adjacency <- matrix(rep(0,length(set)**2),ncol=length(set))
-    colnames(sls@metadata$adjacency) <- rownames(sls@metadata$adjacency) <- cset
-    for ( i in 1:(length(set) - 1) ){ sls@metadata$adjacency[ cset[i], cset[i + 1]] <- sls@metadata$adjacency[ cset[i + 1], cset[i]] <- 1 }
-    sls@metadata$lineages <- list( Lineage1 = cset )
-    sls@metadata$slingParams$end.clus <- cset[length(cset)]
-    sls@metadata$slingParams$end.given <- TRUE
-    sls <- slingshot::getCurves(sls,...)
-    pt  <- slingshot::slingPseudotime(sls)
+    if (requireNamespace('slingshot',quietly=TRUE)) {
+        sls <-  slingshot::getLineages(rd, part, start.clus = set[1])
+        cset <- as.character(set)
+        sls@metadata$adjacency <- matrix(rep(0,length(set)**2),ncol=length(set))
+        colnames(sls@metadata$adjacency) <- rownames(sls@metadata$adjacency) <- cset
+        for ( i in 1:(length(set) - 1) ){ sls@metadata$adjacency[ cset[i], cset[i + 1]] <- sls@metadata$adjacency[ cset[i + 1], cset[i]] <- 1 }
+        sls@metadata$lineages <- list( Lineage1 = cset )
+        sls@metadata$slingParams$end.clus <- cset[length(cset)]
+        sls@metadata$slingParams$end.given <- TRUE
+        sls <- slingshot::getCurves(sls,...)
+        pt  <- slingshot::slingPseudotime(sls)
     
     
-    #SingleCellExperiment::reducedDims(sls) <- list( RD = rd )
-    #SummarizedExperiment::colData(sls)$cluster <- part
+        ##SingleCellExperiment::reducedDims(sls) <- list( RD = rd )
+        ##SummarizedExperiment::colData(sls)$cluster <- part
     
-    #sls  <- slingshot::slingshot(sls, lineages = sds, clusterLabels = 'cluster', reducedDim = 'RD')
-    #colors <- colorRampPalette(brewer.pal(11,'Spectral')[-6])(100)
+        ##sls  <- slingshot::slingshot(sls, lineages = sds, clusterLabels = 'cluster', reducedDim = 'RD')
+        ##colors <- colorRampPalette(brewer.pal(11,'Spectral')[-6])(100)
 
-    #pt  <- sls$slingPseudotime_1
-    ord <- order(pt,decreasing=FALSE)
-    #if ( median(pt[part %in% set[1]],na.rm=TRUE) > median(pt[part %in% set[length(set)]],na.rm=TRUE) ) ord <- rev(ord)
-    names(ord) <- names(pt) <- colnames(x)
-    ord <- names(ord)[ord]
-   
-
+        ##pt  <- sls$slingPseudotime_1
+        ord <- order(pt,decreasing=FALSE)
+        ##if ( median(pt[part %in% set[1]],na.rm=TRUE) > median(pt[part %in% set[length(set)]],na.rm=TRUE) ) ord <- rev(ord)
+        names(ord) <- names(pt) <- colnames(x)
+        ord <- names(ord)[ord]
+    }else{
+        cat("Bioconductor package \'slingshot\' unavailable. Install from Bioconductor. Using princurve instead.\n")
+        pr <- principal_curve(as.matrix(rd),plot_iterations=FALSE)
+        pt <- as.matrix(data.frame(Lineage1=pr$lambda))
+        ord <- pr$ord
+        names(ord) <- rownames(rd)[ord]
+        ord <- names(ord)
+        sls <- pr$s[ord,]
+   }
     return( list( pt=pt, ord=ord, set=set, part=part, rd=rd, sls=sls ) )
 }
 
@@ -2443,10 +2452,19 @@ plotPT <- function(pt,object,clusters=TRUE,lineages=FALSE){
     plotcol <- colors[cut(pt$pt, breaks=100)]
     if ( clusters ) plotcol <- object@fcol[pt$part]
     plot( pt$rd, col = plotcol, pch=16, asp = 1)
-    if ( lineages ){
-        lines(slingshot::SlingshotDataSet(pt$sls), lwd=2, type = 'lineages', col = 'black')
+    if ( is.matrix(pt$sls) ){
+        if ( lineages ){
+            points(pt$sls[object@medoids[pt$set],1],pt$sls[object@medoids[pt$set],2],cex=3,pch=20)
+            lines(pt$sls[object@medoids[pt$set],1],pt$sls[object@medoids[pt$set],2],lwd=2)
+        }else{
+            lines(pt$sls[,1],pt$sls[,2],lwd=2)
+        }
     }else{
-        lines(slingshot::SlingshotDataSet(pt$sls), lwd=2, col='black')
+        if ( lineages ){
+            lines(slingshot::SlingshotDataSet(pt$sls), lwd=2, type = 'lineages', col = 'black')
+        }else{
+            lines(slingshot::SlingshotDataSet(pt$sls), lwd=2, col='black')
+        }
     }
 }
 

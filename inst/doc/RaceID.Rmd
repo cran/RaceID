@@ -884,7 +884,7 @@ For examples, clusters 1, 5, and 3, represent the differentiation trajectory fro
 plotexpmap(sc,"Apoa1",um=TRUE,cex=1,logsc=TRUE)
 ```
 
-To order cells pseudo-temporally, VarID offers a wrapper function `pseudoTime`, which calls the Slingshot method [@slingshot] on a desired dimensional reduction, which can be a subset from the precomputed dimensional reductions of the RaceID object (`sc@fr`, `sc@tsne`, or `sc@umap`, given by the `map` parameter), or a dimensional reduction (t-SNE or UMAP) computed for the subset of cells on the trajectory. This set is assumed to be ordered along the trajectory, with the initial cluster as first entry. This function is not designed to recover branched trajetories; single lineages could be defined based on the output of the `plotTrPtobs` function as an ordered set of clusters. `pseudoTime` will always fit a single trajectory to the clusters specified in `set` according to the indicated order.
+To order cells pseudo-temporally, VarID offers a wrapper function `pseudoTime`, which calls the Slingshot method [@slingshot] on a desired dimensional reduction, which can be a subset from the precomputed dimensional reductions of the RaceID object (`sc@fr`, `sc@tsne`, or `sc@umap`, given by the `map` parameter), or a dimensional reduction (t-SNE or UMAP) computed for the subset of cells on the trajectory. This set is assumed to be ordered along the trajectory, with the initial cluster as first entry. This function is not designed to recover branched trajetories; single lineages could be defined based on the output of the `plotTrPtobs` function as an ordered set of clusters. `pseudoTime` will always fit a single trajectory to the clusters specified in `set` according to the indicated order. The slingsot package needs to be installed from Bioconductor. If the package is not installed, the function falls back to principal curve inference using the `princurve` package.
 ```{r results='hide', message=FALSE}
 # ordered set of clusters on the trajectory
 set <- c(2,3,1)
@@ -898,7 +898,7 @@ plotPT(pt,sc,clusters=FALSE)
 
 The trajectory can also be overlaid with the cluster annotation:
 ```{r}
-plotPT(pt,sc)
+plotPT(pt,sc,clusters=TRUE,lineages=TRUE)
 ```
 
 With the derived pseudo-time a filtered count matrix with cells ordered by pseudo-time can be obtained:

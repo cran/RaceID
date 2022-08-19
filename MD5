@@ -1,11 +1,11 @@
-d8a3725913fdd27d3ca50658b3e2c1b0 *DESCRIPTION
-bf6c4b7bafad8bbad802dd12bc7f7ed3 *NAMESPACE
+80a56010177e93945f76c8a8c7ba63ad *DESCRIPTION
+0174e4b498941240356650559fbca6ad *NAMESPACE
 1a57219f41077b4f9a3cec9e4a7ccb8b *R/RaceID.R
 49aa4b20e5518e1b924e9e0585c33b79 *R/RaceID_utils.R
 28cf7496d8bd5364baf0a40f65db6b0e *R/RcppExports.R
 00f6daaf0fba7e0827242fb7b178fd46 *R/StemID.R
 aca47f639f51fff2421ba2aa4830fb17 *R/StemID_utils.R
-2bc386aea21213dc7e87ca99bc65921b *R/VarID_functions.R
+49c1e37c794b2de4ac2b9a0490bfbc5b *R/VarID_functions.R
 dc83150e3c05abcb05942901608ed62a *R/cc_genes.R
 b0ba1668dfe4b7be3b655a74a03ac994 *R/intestinalData.R
 f74056d8085264e215a188d7129fc4a3 *R/intestinalDataSmall.R
@@ -13,9 +13,9 @@ f74056d8085264e215a188d7129fc4a3 *R/intestinalDataSmall.R
 fedbd0630b1925059da29c6fc292f1a5 *data/cc_genes.RData
 ebeb1e1047ba0314ca6e8c6e0ed0450b *data/intestinalData.RData
 3c992b6c3f8a93d375cb5e795d1b9830 *data/intestinalDataSmall.RData
-7e965af5b1271444f16b9072dace6b13 *inst/doc/RaceID.R
-f525f5124355598821f6c2c844072d19 *inst/doc/RaceID.Rmd
-c4a0c9359364837eab7d169b752c17fd *inst/doc/RaceID.html
+e929fdcad669dc9dc75e56e0177b2ab9 *inst/doc/RaceID.R
+59c9ddb39a15fcffe070e5d02bc276c0 *inst/doc/RaceID.Rmd
+6921df9d369ab83c1acaaf49635c9a89 *inst/doc/RaceID.html
 6036b6e04c8e78efa59da1c0b5079487 *man/CCcorrect.Rd
 7b4b472c291b65801a74b0b48fe7a646 *man/Ltree.Rd
 65e2dc786c63f7275653f3e5f015fd7b *man/RaceID-package.Rd
@@ -113,7 +113,7 @@ a1bd00373fcfcf4368e3dea9ba219baf *man/priorfn.Rd
 2aa48f31b7e843d83b08f32a026f2939 *man/projcells.Rd
 1d4e05e2716599188b4a44f64eab9ab8 *man/projenrichment.Rd
 4a2ea72c0227300b9288274e95e1b9fd *man/pruneKnn.Rd
-97fcc29d47ac4cc67bd667bd849e5009 *man/pseudoTime.Rd
+553a0bd23af0e89a3d16dd93f9517681 *man/pseudoTime.Rd
 ca07f8f55b8471528d702304738db1ae *man/quantKnn.Rd
 736db59264020d28cb1870868cfa916b *man/rcpp_hello_world.Rd
 4e0247f8e095903fe087dcda83fd9dba *man/rfcorrect.Rd
@@ -126,4 +126,4 @@ e3d3cb360fbfdb3c6974e14eb5f09870 *src/Makevars
 1b7d3271293a605ea0366413971e4672 *src/RcppExports.cpp
 1f8a54a4408ba612191d749968cd263f *src/VarID.cpp
 0da63b615f705aa9dfa2e91b15a0ec3a *src/rcpp_hello_world.cpp
-f525f5124355598821f6c2c844072d19 *vignettes/RaceID.Rmd
+59c9ddb39a15fcffe070e5d02bc276c0 *vignettes/RaceID.Rmd

@@ -471,7 +471,7 @@ pt <- pseudoTime(sc,m="umap",set=set)
 plotPT(pt,sc,clusters=FALSE)
 
 ## -----------------------------------------------------------------------------
-plotPT(pt,sc)
+plotPT(pt,sc,clusters=TRUE,lineages=TRUE)
 
 ## -----------------------------------------------------------------------------
 fs <- extractCounts(sc,minexpr=5,minnumber=20,pt=pt)
