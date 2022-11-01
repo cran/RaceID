@@ -1,11 +1,11 @@
-80a56010177e93945f76c8a8c7ba63ad *DESCRIPTION
-0174e4b498941240356650559fbca6ad *NAMESPACE
-1a57219f41077b4f9a3cec9e4a7ccb8b *R/RaceID.R
-49aa4b20e5518e1b924e9e0585c33b79 *R/RaceID_utils.R
+8892afc90ccb2185512c1a48f173104f *DESCRIPTION
+505ce25b67e3e33fec6d70664cf967f2 *NAMESPACE
+998d485e8277051a8f781fb2ffbce4b8 *R/RaceID.R
+0d3a5cebd0da497c96f16ec68c0d1d71 *R/RaceID_utils.R
 28cf7496d8bd5364baf0a40f65db6b0e *R/RcppExports.R
 00f6daaf0fba7e0827242fb7b178fd46 *R/StemID.R
 aca47f639f51fff2421ba2aa4830fb17 *R/StemID_utils.R
-49c1e37c794b2de4ac2b9a0490bfbc5b *R/VarID_functions.R
+f002d443645b894693bf1d23782ed24c *R/VarID_functions.R
 dc83150e3c05abcb05942901608ed62a *R/cc_genes.R
 b0ba1668dfe4b7be3b655a74a03ac994 *R/intestinalData.R
 f74056d8085264e215a188d7129fc4a3 *R/intestinalDataSmall.R
@@ -15,7 +15,7 @@ ebeb1e1047ba0314ca6e8c6e0ed0450b *data/intestinalData.RData
 3c992b6c3f8a93d375cb5e795d1b9830 *data/intestinalDataSmall.RData
 e929fdcad669dc9dc75e56e0177b2ab9 *inst/doc/RaceID.R
 59c9ddb39a15fcffe070e5d02bc276c0 *inst/doc/RaceID.Rmd
-6921df9d369ab83c1acaaf49635c9a89 *inst/doc/RaceID.html
+cdec622d1af3e2521a9e371e4e801001 *inst/doc/RaceID.html
 6036b6e04c8e78efa59da1c0b5079487 *man/CCcorrect.Rd
 7b4b472c291b65801a74b0b48fe7a646 *man/Ltree.Rd
 65e2dc786c63f7275653f3e5f015fd7b *man/RaceID-package.Rd
@@ -35,7 +35,7 @@ b6c6a9390c1c1ae40b3feb3f621b6f34 *man/cellsfromtree.Rd
 7049c64a0278303287dd6720ced902b8 *man/compMean.Rd
 f3e973a3823c14f0ca631e4aa4cb3ddb *man/compNoise.Rd
 87d9d06f25a9ce3a4410fa2221fdacde *man/compTBNoise.Rd
-aedb7a4920fa7f9eed8b831b38c79103 *man/compdist.Rd
+cec86e47bdd95ce011985611716f1240 *man/compdist.Rd
 794b3a9e5f6ab15209862ab905596e5c *man/compentropy.Rd
 61d96c7f6f92efdf0e4291494af2368c *man/compfr.Rd
 1c68990a914222ce9388a1c7feb6ce95 *man/compmedoids.Rd
@@ -112,7 +112,7 @@ a1bd00373fcfcf4368e3dea9ba219baf *man/priorfn.Rd
 4faacadb8ee7e562d22fedd6853764e5 *man/projback.Rd
 2aa48f31b7e843d83b08f32a026f2939 *man/projcells.Rd
 1d4e05e2716599188b4a44f64eab9ab8 *man/projenrichment.Rd
-4a2ea72c0227300b9288274e95e1b9fd *man/pruneKnn.Rd
+f941d96d33b5384144325cb196014972 *man/pruneKnn.Rd
 553a0bd23af0e89a3d16dd93f9517681 *man/pseudoTime.Rd
 ca07f8f55b8471528d702304738db1ae *man/quantKnn.Rd
 736db59264020d28cb1870868cfa916b *man/rcpp_hello_world.Rd
