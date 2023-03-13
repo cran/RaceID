@@ -1,11 +1,11 @@
-4677b50a43d9ce06b6f776306f9ae0fe *DESCRIPTION
+749822d96e4fdf867fce999d6940aab4 *DESCRIPTION
 6ba6534e68565b0eb7f3c7c2af326cdb *NAMESPACE
-f619a2c52f077733dacc4734f0d0148a *R/RaceID.R
+1690c9408b6c0f2ee2edb35196cf810e *R/RaceID.R
 0d3a5cebd0da497c96f16ec68c0d1d71 *R/RaceID_utils.R
 28cf7496d8bd5364baf0a40f65db6b0e *R/RcppExports.R
 00f6daaf0fba7e0827242fb7b178fd46 *R/StemID.R
 aca47f639f51fff2421ba2aa4830fb17 *R/StemID_utils.R
-4b9c62a3b5e8510d3b35f154f274caab *R/VarID_functions.R
+4fa1113cb78a5543ea0e8cc38ec1a5e5 *R/VarID_functions.R
 dc83150e3c05abcb05942901608ed62a *R/cc_genes.R
 b0ba1668dfe4b7be3b655a74a03ac994 *R/intestinalData.R
 f74056d8085264e215a188d7129fc4a3 *R/intestinalDataSmall.R
@@ -15,7 +15,7 @@ ebeb1e1047ba0314ca6e8c6e0ed0450b *data/intestinalData.RData
 3c992b6c3f8a93d375cb5e795d1b9830 *data/intestinalDataSmall.RData
 e929fdcad669dc9dc75e56e0177b2ab9 *inst/doc/RaceID.R
 1175861ef137740641f6f1cbbe51a033 *inst/doc/RaceID.Rmd
-a7c2d025db92b056a350362c700384f1 *inst/doc/RaceID.html
+fc0cd459b550bae6bc6a6e2a52a5709a *inst/doc/RaceID.html
 6036b6e04c8e78efa59da1c0b5079487 *man/CCcorrect.Rd
 7b4b472c291b65801a74b0b48fe7a646 *man/Ltree.Rd
 65e2dc786c63f7275653f3e5f015fd7b *man/RaceID-package.Rd
@@ -106,7 +106,7 @@ b9b34825aa03bfdbd96c3b096213f027 *man/plotsaturation.Rd
 e35a401a2390ad5fb1bd9b9dc1b3d728 *man/plotsensitivity.Rd
 949c95c672cca913469a673882b818d9 *man/plotsilhouette.Rd
 e974e86709242e13b3d30f45b9960342 *man/plotspantree.Rd
-131faa2b2a423065ff717afdcb7ddb43 *man/plotsymbolsmap.Rd
+10ef15d0818fee574e57855ef9229534 *man/plotsymbolsmap.Rd
 d81d1e3b7839584a966614e8ac420514 *man/postfntb.Rd
 a1bd00373fcfcf4368e3dea9ba219baf *man/priorfn.Rd
 4faacadb8ee7e562d22fedd6853764e5 *man/projback.Rd
