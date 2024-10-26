@@ -1,11 +1,11 @@
-cef09285998c408021c9f42846220e3a *DESCRIPTION
+e88c2abcf6f54314bbf9d7795dfc4b8e *DESCRIPTION
 3505f6e1fde1984a150aabe135ceb26a *NAMESPACE
 bbf6795a2f4481cb98815b489c4d371b *R/RaceID.R
 7370e37a198353c878ecf36dce9e990d *R/RaceID_utils.R
 28cf7496d8bd5364baf0a40f65db6b0e *R/RcppExports.R
 00f6daaf0fba7e0827242fb7b178fd46 *R/StemID.R
 aca47f639f51fff2421ba2aa4830fb17 *R/StemID_utils.R
-11e8a67bb947f92208572f3ee40bcfb3 *R/VarID_functions.R
+013224464095927feb9050acaaa080ba *R/VarID_functions.R
 dc83150e3c05abcb05942901608ed62a *R/cc_genes.R
 b0ba1668dfe4b7be3b655a74a03ac994 *R/intestinalData.R
 f74056d8085264e215a188d7129fc4a3 *R/intestinalDataSmall.R
@@ -15,7 +15,7 @@ f74056d8085264e215a188d7129fc4a3 *R/intestinalDataSmall.R
 03c745aeef55de08b911eb00b3cc6ee7 *data/intestinalDataSmall.RData
 8f1541b9b11a741df9ce03696b787378 *inst/doc/RaceID.R
 63701fc04984f85d972885006dd410be *inst/doc/RaceID.Rmd
-981fbdadd514789d602323ff649095fa *inst/doc/RaceID.html
+2ae5c6a19dcf938c177a0757d064be22 *inst/doc/RaceID.html
 6036b6e04c8e78efa59da1c0b5079487 *man/CCcorrect.Rd
 7b4b472c291b65801a74b0b48fe7a646 *man/Ltree.Rd
 dc5d0689b0db4c342c4f6552625e42b9 *man/RaceID-package.Rd
@@ -113,7 +113,7 @@ a1bd00373fcfcf4368e3dea9ba219baf *man/priorfn.Rd
 4faacadb8ee7e562d22fedd6853764e5 *man/projback.Rd
 2aa48f31b7e843d83b08f32a026f2939 *man/projcells.Rd
 1d4e05e2716599188b4a44f64eab9ab8 *man/projenrichment.Rd
-5af109d4676a46b3e50a48a7efaf34e5 *man/pruneKnn.Rd
+586700a09955851c37a24bda7d0ae358 *man/pruneKnn.Rd
 d5732093d5ae410e8c05edd2d45d44b3 *man/pseudoTime.Rd
 ca07f8f55b8471528d702304738db1ae *man/quantKnn.Rd
 736db59264020d28cb1870868cfa916b *man/rcpp_hello_world.Rd
