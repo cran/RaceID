@@ -2519,14 +2519,15 @@ pseudoTime <- function(object,set,m=NULL,useSlingshot=TRUE,map="umap",x=NULL,n_n
 #' @param object \pkg{RaceID} \code{SCseq} object.
 #' @param clusters logical. If \code{TRUE}, then clusters are highlighted. Otherwise, pseudotime is highlighted. Default is \code{TRUE}.
 #' @param lineages logical. If \code{TRUE}, then lineages as linear connections of clusters are hghlighted. Otherwise, continuous trajectories are shown. Default is \code{FALSE}.
+#' @param cex positive number. Points symbol size. Default is 1.
 #' @return None
 #' @import RColorBrewer
 #' @export
-plotPT <- function(pt,object,clusters=TRUE,lineages=FALSE){
+plotPT <- function(pt,object,clusters=TRUE,lineages=FALSE,cex=1){
     colors <- colorRampPalette(brewer.pal(11,'Spectral')[-6])(100)
     plotcol <- colors[cut(pt$pt, breaks=100)]
     if ( clusters ) plotcol <- object@fcol[pt$part]
-    plot( pt$rd, col = plotcol, pch=16, asp = 1)
+    plot( pt$rd, col = plotcol, pch=16, asp = 1, cex=cex)
     if ( is.matrix(pt$sls) ){
         if ( lineages ){
             points(pt$sls[object@medoids[pt$set],1],pt$sls[object@medoids[pt$set],2],cex=3,pch=20)
